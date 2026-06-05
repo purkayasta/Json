@@ -68,9 +68,9 @@ export default function JsonFormatter({ hidden = false }) {
   }
 
   return (
-    <main className={`flex flex-1 overflow-hidden ${hidden ? 'hidden' : ''}`}>
+    <main className={`flex-col md:flex-row flex-1 overflow-hidden ${hidden ? 'hidden' : 'flex'}`}>
       {/* Left: Input Panel */}
-      <div className="flex-1 flex flex-col border-r border-gray-200 dark:border-gray-800">
+      <div className="flex-1 flex flex-col min-h-0 border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-800">
         <div className="px-4 py-2 text-xs font-medium text-gray-900 dark:text-gray-400 uppercase tracking-wider border-b border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900 shrink-0">
           Paste here
         </div>
@@ -82,8 +82,8 @@ export default function JsonFormatter({ hidden = false }) {
         />
       </div>
 
-      {/* Middle: Controls */}
-      <div className="flex flex-col items-center justify-center gap-3 px-4 w-44 shrink-0 border-r border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950">
+      {/* Middle: Controls — 2-col grid strip on mobile, vertical sidebar on md+ */}
+      <div className="grid grid-cols-2 md:flex md:flex-col items-center justify-center gap-3 px-4 py-3 md:py-0 w-full md:w-44 shrink-0 border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950">
         <button
           type="button"
           onClick={handleBeautify}
@@ -105,7 +105,7 @@ export default function JsonFormatter({ hidden = false }) {
         >
           Compress
         </button>
-        <div className="flex flex-col items-start gap-1 w-full pt-1 border-t border-gray-200 dark:border-gray-800">
+        <div className="flex flex-col items-start gap-1 w-full md:pt-1 md:border-t border-gray-200 dark:border-gray-800">
           <label className="text-xs text-gray-900 dark:text-gray-400">Tab Size</label>
           <select
             value={tabSize}
@@ -120,7 +120,7 @@ export default function JsonFormatter({ hidden = false }) {
       </div>
 
       {/* Right: Output Panel */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col min-h-0">
         <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900 shrink-0">
           <span className="text-xs font-medium text-gray-900 dark:text-gray-400 uppercase tracking-wider">Magic here</span>
           {output && !error && (

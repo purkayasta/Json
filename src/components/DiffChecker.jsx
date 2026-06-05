@@ -129,9 +129,9 @@ export default function DiffChecker({ hidden = false }) {
 
   return (
     <div className={`flex-1 flex-col overflow-hidden ${hidden ? 'hidden' : 'flex'}`}>
-      <main className="flex flex-1 overflow-hidden">
+      <main className="flex flex-col md:flex-row flex-1 overflow-hidden">
         {/* Left: Original */}
-        <div className="flex-1 flex flex-col border-r border-gray-200 dark:border-gray-800">
+        <div className="flex-1 flex flex-col min-h-0 border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-800">
           <div className="px-4 py-2 text-xs font-medium text-gray-900 dark:text-gray-400 uppercase tracking-wider border-b border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900 shrink-0">
             Original
           </div>
@@ -143,8 +143,8 @@ export default function DiffChecker({ hidden = false }) {
           />
         </div>
 
-        {/* Middle: Controls */}
-        <div className="flex flex-col items-center justify-center gap-3 px-4 w-44 shrink-0 border-r border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950">
+        {/* Middle: Controls — full-width strip on mobile, vertical sidebar on md+ */}
+        <div className="flex flex-col items-center justify-center gap-3 px-4 py-3 md:py-0 w-full md:w-44 shrink-0 border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950">
           <button
             type="button"
             onClick={handleCompare}
@@ -161,7 +161,7 @@ export default function DiffChecker({ hidden = false }) {
         </div>
 
         {/* Right: Changed */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col min-h-0">
           <div className="px-4 py-2 text-xs font-medium text-gray-900 dark:text-gray-400 uppercase tracking-wider border-b border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900 shrink-0">
             Changed
           </div>

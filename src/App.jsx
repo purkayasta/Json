@@ -17,8 +17,8 @@ export default function App() {
 
   return (
     <div className="flex flex-col h-screen bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-white">
-      <header className="flex items-center justify-between px-6 py-3 border-b border-gray-200 dark:border-gray-800 shrink-0">
-        <div className="flex items-baseline gap-3">
+      <header className="flex items-center justify-between gap-2 px-4 sm:px-6 py-3 border-b border-gray-200 dark:border-gray-800 shrink-0">
+        <div className="flex items-baseline gap-3 min-w-0">
           <h1 className="font-mono text-lg font-semibold">
             <span className="text-blue-500 dark:text-blue-400">&#123;</span>
             <span className="text-yellow-500 dark:text-yellow-300 mx-1">"</span>
@@ -26,13 +26,13 @@ export default function App() {
             <span className="text-yellow-500 dark:text-yellow-300 mx-1">"</span>
             <span className="text-blue-500 dark:text-blue-400">&#125;</span>
           </h1>
-          <p className="font-mono text-xs text-gray-900 dark:text-gray-500">
+          <p className="hidden md:block font-mono text-xs text-gray-900 dark:text-gray-500">
             <span className="text-green-600 dark:text-green-500">// </span>
             where strings become objects
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <div className="flex gap-1 p-1 rounded-lg bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
             {MODES.map(m => (
               <button
@@ -81,7 +81,7 @@ export default function App() {
       <JsonFormatter hidden={mode !== 'formatter'} />
       <DiffChecker hidden={mode !== 'diff'} />
 
-      <footer className="flex items-center justify-center gap-1.5 px-6 py-2 border-t border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900 shrink-0">
+      <footer className="flex flex-wrap items-center justify-center gap-1.5 px-4 sm:px-6 py-2 border-t border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900 shrink-0">
         <span className="text-xs text-gray-900 dark:text-gray-500">made with</span>
         <span className="text-xs font-medium text-blue-500 dark:text-blue-400">React</span>
         <span className="text-xs text-gray-300 dark:text-gray-600">+</span>
