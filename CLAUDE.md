@@ -5,14 +5,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-pnpm dev          # start dev server at localhost:5173
-pnpm build        # production build (outputs to dist/)
-pnpm preview      # preview the production build locally
-pnpm lint         # run ESLint across all js/jsx files
-pnpm deploy       # build then push dist/ to gh-pages branch
+npm run dev       # start dev server at localhost:5173
+npm run build     # production build (outputs to dist/)
+npm run preview   # preview the production build locally
+npm run lint      # run ESLint across all js/jsx files
+npm run deploy    # build then push dist/ to gh-pages branch
 ```
 
-No test suite is configured. There is no `pnpm test` command.
+No test suite is configured. There is no `npm test` command.
 
 ## Architecture
 
